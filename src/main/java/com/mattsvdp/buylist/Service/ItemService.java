@@ -31,4 +31,8 @@ public class ItemService {
         Item newItem = new Item(name, amount);
         return itemRepo.save(newItem);
     }
+
+    public void delItem(int id) {
+        itemRepo.deleteById(id);
+    }
 }
