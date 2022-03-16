@@ -26,4 +26,9 @@ public class ItemService {
         Item item = itemRepo.findById(id).orElse(null);
         return item;
     }
+
+    public Item addItem(String name, int amount) {
+        Item newItem = new Item(name, amount);
+        return itemRepo.save(newItem);
+    }
 }
