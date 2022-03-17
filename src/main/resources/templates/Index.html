@@ -1,0 +1,17 @@
+<h1>hallo</h1>
+
+
+<form th:action="@{/add}" method="post">
+    <input type="text" name="name" placeholder="Name">
+    <input type="number" name="amount" min="0">
+    <input type="submit" name="add" value="+">
+</form>
+
+
+<form th:action="@{/delete}" method="post">
+<div th:each="item: ${items}">
+    <div th:text="${item.name}"></div>
+    <div th:text="${item.amount}"></div>
+    <button name="delete" th:value="${item.id}" type="submit">Delete</button>
+</div>
+</form>
